@@ -1,0 +1,1309 @@
+/* =========================
+   GENERAL SETTINGS
+========================= */
+
+body {
+    font-family: "Garamond", serif;
+    margin: 0;
+    background-image: url("images/runner.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.main-header {
+    position: relative;
+    padding: 25px 40px;
+    background-color: rgba(47,255,147,0.72);
+    color: #003366;
+    text-align: center;
+    border-bottom: 5px solid #003366;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+}
+
+.header-text h1,
+.header-text h2,
+.header-text p {
+    color: #003366;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background-color: rgb(94,0,128);
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+
+/* =========================
+   COMMON SECTION STYLE
+========================= */
+
+section {
+    background-color: rgba(255,255,255,0.9);
+    margin: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   STAFF DIRECTORY
+========================= */
+
+.staff-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.staff-table th,
+.staff-table td {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+.staff-table th {
+    background: #003366;
+    color: white;
+}
+
+.staff-table tr:nth-child(even) {
+    background: #f2f5f7;
+}
+
+.staff-table td:nth-child(3),
+.staff-table td:nth-child(4),
+.staff-table td:nth-child(5) {
+    text-align: left;
+}
+
+
+/* =========================
+   STAFF CARDS
+========================= */
+
+.staff-card,
+.employee-card {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.staff-card img,
+.employee-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.staff-container,
+.employee-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   UNIT STRUCTURE
+========================= */
+
+.org-chart {
+    text-align: center;
+    width: 90%;
+    margin: 40px auto;
+    background: #e8f5e9;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.org-box {
+    border: 2px solid black;
+    padding: 15px;
+    width: 200px;
+    margin: 15px auto;
+    border-radius: 10px;
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.line {
+    font-size: 30px;
+    text-align: center;
+}
+
+.staff-box {
+    border: 2px solid black;
+    width: 130px;
+    padding: 8px;
+    border-radius: 8px;
+    background: #eef6ff;
+    text-align: center;
+}
+
+.staff-box img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.staff-box h3 {
+    font-size: 14px;
+}
+
+.staff-box p {
+    font-size: 12px;
+}
+
+
+/* =========================
+   EMPLOYEE OF QUARTER
+========================= */
+
+.home-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.home-content {
+    flex: 1;
+}
+
+.award-side {
+    width: 220px;
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.award-side img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   FOLDER CARDS
+========================= */
+
+.folder-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.folder-card {
+    width: 170px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.folder-card img {
+    width: 90px;
+}
+
+.folder-card:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   TECHNICAL LIBRARY
+========================= */
+
+.library-container {
+    width: 85%;
+    margin: 40px auto;
+    background: rgba(220,240,220,0.90);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.library-logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.library-logo img {
+    width: 140px;
+    height: auto;
+}
+
+.library-container h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 30px;
+}
+
+.search-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 60%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.folder-title {
+    background: rgba(87, 0, 128, 0.53);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sub-folder {
+    margin-left: 35px;
+}
+
+.documents {
+    margin-left: 25px;
+}
+
+.document-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f9fc;
+    padding: 14px 18px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 5px solid #003366;
+    transition: 0.3s;
+}
+
+.document-card:hover {
+    transform: translateX(8px);
+    background: #eaf2ff;
+}
+
+.document-card a {
+    background: #0066cc;
+    color: white;
+    padding: 7px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.document-card a:hover {
+    background: #004080;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-container {
+    width: 380px;
+    max-width: 85%;
+    margin: 80px auto;
+    padding: 35px;
+    text-align: center;
+    background: rgba(232,245,233,0.92);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.login-container h2 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #555;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-family: "Garamond", serif;
+    font-size: 16px;
+}
+
+.login-container button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #1f4e79;
+    color: white;
+    font-size: 17px;
+    font-family: "Garamond", serif;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #2c7fb8;
+}
+
+#login-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   STAFF LOGIN BUTTON
+========================= */
+
+.staff-login {
+    text-align: right;
+    margin: 10px 0 25px 0;
+}
+
+.staff-login a {
+    display: inline-block;
+    background: #1f4e79;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.staff-login a:hover {
+    background: #2c7fb8;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   STAFF ACCESS
+================================ */
+
+.staff-access {
+    text-align: right;
+    margin: 10px 0 25px 0;
+}
+
+.staff-login-button,
+.upload-button,
+.logout-button {
+    display: inline-block;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: "Garamond", serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.staff-login-button {
+    background: #1f4e79;
+    color: white;
+}
+
+.upload-button {
+    background: #2e7d32;
+    color: white;
+    margin-left: 8px;
+}
+
+.logout-button {
+    background: #777;
+    color: white;
+    margin-left: 8px;
+}
+
+.staff-login-button:hover,
+.upload-button:hover,
+.logout-button:hover {
+    opacity: 0.85;
+}
+
+#logged-in-area {
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#user-email {
+    font-weight: bold;
+    color: #003366;
+    margin-right: 8px;
+}
+
+
+/* ================================
+   UPLOAD PANEL
+================================ */
+
+.upload-panel {
+    margin: 20px 0 30px 0;
+    padding: 25px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 12px;
+    border: 2px solid #1f4e79;
+}
+
+.upload-panel h3 {
+    color: #003366;
+    margin-top: 0;
+}
+
+.upload-panel label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.upload-panel select,
+.upload-panel input[type="text"],
+.upload-panel input[type="file"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    font-family: "Garamond", serif;
+    font-size: 16px;
+}
+
+.upload-actions {
+    margin-top: 20px;
+}
+
+.upload-confirm-button,
+.cancel-button {
+    border: none;
+    padding: 9px 18px;
+    border-radius: 18px;
+    font-family: "Garamond", serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-confirm-button {
+    background: #2e7d32;
+    color: white;
+}
+
+.cancel-button {
+    background: #777;
+    color: white;
+    margin-left: 8px;
+}
+
+#upload-message {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.empty-message {
+    background: rgba(255,255,255,0.65);
+    padding: 15px 20px;
+    margin: 10px 0 20px 25px;
+    border-radius: 8px;
+    color: #555;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.report-year-heading {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1f4e79;
+    margin: 15px 0 8px 20px;
+}
+
+
+/* ================================
+   DELETE DOCUMENT
+================================ */
+
+.delete-document-button {
+    border: none;
+    background: #9e2a2a;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 15px;
+    margin-left: 8px;
+    font-family: "Garamond", serif;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-document-button:hover {
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   MAINTENANCE CATEGORIES
+========================================== */
+
+.maintenance-categories {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(220,240,220,0.90);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.maintenance-categories h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.maintenance-intro {
+    max-width: 800px;
+    margin: 0 auto 35px;
+    text-align: center;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.maintenance-category-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+    gap: 25px;
+}
+
+.maintenance-category-card {
+    display: block;
+    padding: 30px 25px;
+    background: rgba(255,255,255,0.94);
+    border-radius: 16px;
+    border-top: 5px solid #1f4e79;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+.maintenance-category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 9px 25px rgba(0,0,0,0.18);
+}
+
+.maintenance-category-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.maintenance-category-card h3 {
+    color: #003366;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.maintenance-category-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.category-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1f4e79;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   MAJOR MAINTENANCE ACTIVITIES
+   Kept for future use
+========================================== */
+
+.major-maintenance {
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+.major-maintenance h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.major-maintenance-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: #555;
+    font-size: 17px;
+}
+
+.major-maintenance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.major-maintenance-card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    border-top: 5px solid #1f4e79;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.major-maintenance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+}
+
+.major-maintenance-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.major-maintenance-card h3 {
+    color: #003366;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.maintenance-year {
+    display: inline-block;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.major-maintenance-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.maintenance-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.maintenance-tags span {
+    background: #e8f1f8;
+    color: #1f4e79;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.maintenance-details {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1f4e79;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.maintenance-details:hover {
+    text-decoration: underline;
+}
+/* ==========================================
+   MAINTENANCE PAGE
+========================================== */
+
+.maintenance-categories {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(220,240,220,0.90);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.maintenance-categories {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(220,240,220,0.90);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+/* ==========================================
+   PREVENTIVE MAINTENANCE PAGE
+========================================== */
+
+.maintenance-activities-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 35px;
+    background-color: rgba(220,240,220,0.90);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.maintenance-activities-page h1 {
+    text-align: center;
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.maintenance-page-intro {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    text-align: center;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.maintenance-activity-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    );
+    gap: 25px;
+}
+
+.maintenance-activity-card {
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid #1f4e79;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+}
+
+.maintenance-activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.activity-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.maintenance-activity-card h2 {
+    color: #003366;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.activity-type {
+    display: inline-block;
+    background: #e8f1f8;
+    color: #1f4e79;
+    padding: 5px 11px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.maintenance-activity-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.activity-details {
+    margin-top: 15px;
+    color: #555;
+}
+
+.activity-details ul {
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+.maintenance-note {
+    margin-top: 30px;
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.75);
+    border-left: 5px solid #1f4e79;
+    border-radius: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+/* ==========================================
+   MAINTENANCE ACTIVITY IMAGES
+========================================== */
+
+.maintenance-activity-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.activity-details p {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.activity-details strong {
+    color: #003366;
+}
+/* =========================
+   UNIT HEAD CENTERING
+========================= */
+
+.unit-head {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.unit-head .staff-box {
+    margin: 0 auto;
+}
+/* =========================
+   PAGE HEADER CENTERING
+========================= */
+
+header {
+    text-align: center;
+}
+/* =========================
+   STAFF DIRECTORY HEADER
+========================= */
+
+header {
+    text-align: center;
+    background-color: rgba(220, 240, 220, 0.88);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 30px;
+}
+
+header h1,
+header h2,
+header p {
+    color: #003366;
+    margin: 5px 0;
+}
+/* =========================
+   STAFF DIRECTORY ALIGNMENT
+========================= */
+
+/* Sl. No. column */
+.staff-table th:nth-child(1),
+.staff-table td:nth-child(1) {
+    text-align: center;
+}
+
+/* Employee ID column */
+.staff-table th:nth-child(2),
+.staff-table td:nth-child(2) {
+    text-align: center;
+}
+/* Gallery Layout */
+
+#gallery-container {
+    width: 90%;
+    margin: auto;
+}
+
+
+/* Category Heading */
+
+.gallery-category-title {
+
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1f4e79;
+
+    color: #1f4e79;
+
+}
+
+
+
+/* Activity Card */
+
+.gallery-card {
+
+    margin: 25px 0;
+    padding: 20px;
+
+    background: rgba(232,245,233,0.95);
+
+    border-radius: 10px;
+
+    border-left: 5px solid #1f4e79;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+}
+
+
+.gallery-card h3 {
+
+    color: #003366;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.gallery-card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* Image Grid */
+
+.gallery-images {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+}
+
+
+
+/* Images */
+
+.gallery-image {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+
+}
+
+
+
+.gallery-image:hover {
+
+    transform: scale(1.05);
+
+}
+/* Gallery Image Grid */
+
+.gallery-images {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+}
+
+
+/* Gallery Thumbnail Images */
+
+.gallery-image {
+
+    width: 220px;
+
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+
+}
+
+
+.gallery-image:hover {
+
+    transform: scale(1.05);
+
+}
+/* Image Lightbox */
+
+#image-lightbox {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,0.85);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+
+}
+
+
+
+#lightbox-image {
+
+    max-width: 85%;
+
+    max-height: 85%;
+
+    border-radius: 10px;
+
+}
+
+
+
+#close-lightbox {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 40px;
+
+    font-size: 40px;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+/* ==========================================
+   GALLERY CATEGORY FILTER BUTTONS
+========================================== */
+
+.gallery-filter {
+
+    text-align: center;
+    margin: 25px auto 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+
+
+.gallery-filter button {
+
+    background: #1f4e79;
+    color: white;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-family: "Garamond", serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+
+}
+
+
+
+.gallery-filter button:hover {
+
+    background: #2c7fb8;
+
+    transform: translateY(-3px);
+
+}
+.gallery-filter button.active {
+
+    background: #2e7d32;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+
+}
+/* ==========================================
+IMPORTANT LINKS
+========================================== */
+
+.quick-links {
+    margin: 25px 30px 25px;
+    padding: 20px 25px;
+    background: rgba(0, 128, 85, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.quick-links h2 {
+    color: #003366;
+    font-size: 25px;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.quick-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    flex-wrap: nowrap;
+}
+
+.quick-link-card {
+    width: 120px;
+    height: 85px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* Normal logos - SAP RISE and DRC */
+.quick-link-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Larger EAS logo */
+.quick-link-card.eas-link img {
+    width: 75px;
+    height: 75px;
+}
+
+/* Larger Asset Declaration logo */
+.quick-link-card.asset-link img {
+    width: 75px;
+    height: 75px;
+}
+
+
+/* ==========================================
+MOBILE VIEW
+========================================== */
+
+@media (max-width: 700px) {
+
+    .quick-links-container {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+}

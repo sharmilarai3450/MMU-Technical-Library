@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Gallery - MMU</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="main-header">
+
+    <img src="images/logo.png" class="logo">
+
+    <div class="header-text">
+
+        <h1>Mechanical Maintenance Unit</h1>
+        <h2>Gallery</h2>
+        <p>Tala Hydropower Plant</p>
+
+    </div>
+
+</header>
+
+
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="equipment.html">Equipment</a>
+<a href="maintenance.html">Maintenance</a>
+<a href="unit-structure.html">Unit Structure</a>
+<a href="staff-directory.html">Staff Directory</a>
+<a href="technical-library.html">Technical Library</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact Us</a>
+
+</nav>
+
+
+
+<section class="gallery-section">
+
+
+<h2>MMU Gallery</h2>
+
+
+<p class="gallery-intro">
+
+Photographs of major maintenance activities, installations,
+team events and other activities of the Mechanical Maintenance Unit.
+
+</p>
+
+<div class="gallery-filter">
+
+<button onclick="filterGallery('All')">
+All
+</button>
+
+<button onclick="filterGallery('Annual Maintenance')">
+Annual Maintenance
+</button>
+
+<button onclick="filterGallery('Special Maintenance')">
+Special Maintenance
+</button>
+
+<button onclick="filterGallery('New Installations & Modifications')">
+New Installations & Modifications
+</button>
+
+<button onclick="filterGallery('Major Breakdown & Restoration')">
+Major Breakdown & Restoration
+</button>
+
+<button onclick="filterGallery('Team Events')">
+Team Events
+</button>
+
+<button onclick="filterGallery('Social & External Events')">
+Social & External Events
+</button>
+
+</div>
+
+<div id="gallery-container">
+
+</div>
+<div id="image-lightbox">
+
+    <span id="close-lightbox">&times;</span>
+
+    <img id="lightbox-image">
+
+</div>
+
+
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase-config.js"></script>
+
+<script src="gallery.js"></script>
+
+
+</body>
+
+</html>

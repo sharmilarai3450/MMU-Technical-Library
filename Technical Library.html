@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Library - MMU</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+
+<section class="library-container">
+
+
+    <!-- DGPC LOGO -->
+
+    <div class="library-logo">
+
+        <img src="images/dgpc-logo.png" alt="DGPC Logo">
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h2>📚 Technical Library</h2>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="🔍 Search documents..."
+            id="searchInput"
+        >
+
+    </div>
+
+
+
+    <!-- STAFF ACCESS -->
+
+    <div class="staff-access">
+
+
+        <!-- LOGGED OUT -->
+
+        <div id="logged-out-area">
+
+            <a
+                href="login.html"
+                class="staff-login-button"
+            >
+                🔐 Staff Login
+            </a>
+
+        </div>
+
+
+        <!-- LOGGED IN -->
+
+        <div
+            id="logged-in-area"
+            style="display:none;"
+        >
+
+            <span id="user-email"></span>
+
+            <button
+                onclick="showUploadForm()"
+                class="upload-button"
+            >
+                ➕ Upload Document
+            </button>
+
+            <button
+                onclick="logoutUser()"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- UPLOAD PANEL -->
+
+    <div
+        id="upload-panel"
+        class="upload-panel"
+        style="display:none;"
+    >
+
+        <h3>Upload Technical Document</h3>
+
+
+        <label for="document-category">
+            Document Category
+        </label>
+
+        <select id="document-category">
+
+            <option value="Test Reports">
+                Test Reports
+            </option>
+
+            <option value="Calibration Certificates">
+                Calibration Certificates
+            </option>
+
+            <option value="Annual Maintenance Reports">
+                Annual Maintenance Reports
+            </option>
+
+        </select>
+
+
+
+        <label for="document-year">
+            Folder / Year
+        </label>
+
+        <input
+            type="text"
+            id="document-year"
+            placeholder="Example: 2026"
+        >
+
+
+
+        <label for="document-file">
+            Select PDF
+        </label>
+
+        <input
+            type="file"
+            id="document-file"
+            accept=".pdf,application/pdf"
+        >
+
+
+
+        <div class="upload-actions">
+
+            <button
+                onclick="uploadDocument()"
+                class="upload-confirm-button"
+            >
+                Upload
+            </button>
+
+            <button
+                onclick="hideUploadForm()"
+                class="cancel-button"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+
+        <p id="upload-message"></p>
+
+    </div>
+
+
+
+    <!-- DOCUMENT LIBRARY -->
+
+    <div class="folder">
+
+
+        <!-- ==========================================
+             ANNUAL MAINTENANCE REPORTS
+        =========================================== -->
+
+        <details>
+
+            <summary class="folder-title">
+
+                📁 Annual Maintenance Reports
+
+            </summary>
+
+
+            <div class="sub-folder">
+
+
+                <details>
+
+                    <summary class="folder-title">
+
+                        📂 AM 2025-2026
+
+                    </summary>
+
+
+                    <div class="documents">
+
+
+                        <div class="document-card">
+
+                            <span>
+                                📄 Unit 1 AM Report
+                            </span>
+
+                            <a
+                                href="reports/AM reports 2025-2026/Unit 1 AM report 25-26.pdf"
+                                target="_blank"
+                            >
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div class="document-card">
+
+                            <span>
+                                📄 Unit 2 AM Report
+                            </span>
+
+                            <a
+                                href="reports/AM reports 2025-2026/Unit 2 AM report 25-26.pdf"
+                                target="_blank"
+                            >
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div class="document-card">
+
+                            <span>
+                                📄 Unit 3 AM Report
+                            </span>
+
+                            <a
+                                href="reports/AM reports 2025-2026/Unit 3 AM report 25-26.pdf"
+                                target="_blank"
+                            >
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div class="document-card">
+
+                            <span>
+                                📄 Unit 4 AM Report
+                            </span>
+
+                            <a
+                                href="reports/AM reports 2025-2026/Unit 4 AM report 25-26.pdf"
+                                target="_blank"
+                            >
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div class="document-card">
+
+                            <span>
+                                📄 Unit 5 AM Report
+                            </span>
+
+                            <a
+                                href="reports/AM reports 2025-2026/Unit 5 AM report 25-26.pdf"
+                                target="_blank"
+                            >
+                                View
+                            </a>
+
+                        </div>
+
+
+                        <div class="document-card">
+
+                            <span>
+                                📄 Unit 6 AM Report
+                            </span>
+
+                            <a
+                                href="reports/AM reports 2025-2026/Unit 6 AM report 25-26.pdf"
+                                target="_blank"
+                            >
+                                View
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+
+                </details>
+
+
+            </div>
+
+
+        </details>
+
+
+
+        <!-- ==========================================
+             TEST REPORTS
+        =========================================== -->
+
+        <details>
+
+            <summary class="folder-title">
+
+                📁 Test Reports
+
+            </summary>
+
+
+            <div
+                class="documents"
+                id="test-reports-list"
+            >
+
+                <div class="empty-message">
+
+                    Loading test reports...
+
+                </div>
+
+            </div>
+
+
+        </details>
+
+
+
+        <!-- ==========================================
+             CALIBRATION CERTIFICATES
+        =========================================== -->
+
+        <details>
+
+            <summary class="folder-title">
+
+                📁 Calibration Certificates
+
+            </summary>
+
+
+            <div class="documents">
+
+                <div class="empty-message">
+
+                    No calibration certificates uploaded yet.
+
+                </div>
+
+            </div>
+
+
+        </details>
+
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+
+
+/* =====================================================
+   GLOBAL ROLE
+===================================================== */
+
+let currentUserRole = null;
+
+
+
+/* =====================================================
+   CHECK LOGIN STATUS
+===================================================== */
+
+async function checkLogin() {
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+
+    updateLoginDisplay(session);
+
+
+    if (session) {
+
+        await getCurrentUserRole();
+
+    }
+    else {
+
+        currentUserRole = null;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   GET CURRENT USER ROLE
+===================================================== */
+
+async function getCurrentUserRole() {
+
+    const {
+        data,
+        error
+    } = await supabaseClient.rpc(
+        "get_my_role"
+    );
+
+
+    if (error) {
+
+        console.error(
+            "Unable to determine user role:",
+            error
+        );
+
+        currentUserRole = null;
+
+        return;
+
+    }
+
+
+    currentUserRole = data;
+
+}
+
+
+
+/* =====================================================
+   UPDATE LOGIN DISPLAY
+===================================================== */
+
+function updateLoginDisplay(session) {
+
+    const loggedOutArea =
+        document.getElementById("logged-out-area");
+
+    const loggedInArea =
+        document.getElementById("logged-in-area");
+
+    const userEmail =
+        document.getElementById("user-email");
+
+
+    if (session) {
+
+        loggedOutArea.style.display = "none";
+
+        loggedInArea.style.display = "flex";
+
+        userEmail.textContent =
+            "👤 " + session.user.email;
+
+    }
+
+    else {
+
+        loggedOutArea.style.display = "block";
+
+        loggedInArea.style.display = "none";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LISTEN FOR LOGIN / LOGOUT
+===================================================== */
+
+supabaseClient.auth.onAuthStateChange(
+    async (event, session) => {
+
+        updateLoginDisplay(session);
+
+
+        if (session) {
+
+            await getCurrentUserRole();
+
+        }
+        else {
+
+            currentUserRole = null;
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   SHOW UPLOAD FORM
+===================================================== */
+
+function showUploadForm() {
+
+    document.getElementById("upload-panel")
+        .style.display = "block";
+
+}
+
+
+
+/* =====================================================
+   HIDE UPLOAD FORM
+===================================================== */
+
+function hideUploadForm() {
+
+    document.getElementById("upload-panel")
+        .style.display = "none";
+
+}
+
+
+
+/* =====================================================
+   UPLOAD DOCUMENT
+===================================================== */
+
+async function uploadDocument() {
+
+    const category =
+        document.getElementById("document-category").value;
+
+    const year =
+        document.getElementById("document-year").value.trim();
+
+    const file =
+        document.getElementById("document-file").files[0];
+
+    const message =
+        document.getElementById("upload-message");
+
+
+    message.textContent = "";
+
+
+    if (!file) {
+
+        message.textContent =
+            "Please select a PDF file.";
+
+        return;
+
+    }
+
+
+    if (file.type !== "application/pdf") {
+
+        message.textContent =
+            "Only PDF files are allowed.";
+
+        return;
+
+    }
+
+
+    if (!year) {
+
+        message.textContent =
+            "Please enter the folder or year.";
+
+        return;
+
+    }
+
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+
+    if (!session) {
+
+        message.textContent =
+            "Please log in first.";
+
+        return;
+
+    }
+
+
+    const filePath =
+        category +
+        "/" +
+        year +
+        "/" +
+        Date.now() +
+        "_" +
+        file.name;
+
+
+    const {
+        error
+    } = await supabaseClient.storage
+        .from("MMU documents")
+        .upload(
+            filePath,
+            file
+        );
+
+
+    if (error) {
+
+        console.error(error);
+
+        message.textContent =
+            "Upload failed: " +
+            error.message;
+
+        return;
+
+    }
+
+
+    message.textContent =
+        "✅ Document uploaded successfully.";
+
+
+    document.getElementById("document-file").value = "";
+
+
+    if (category === "Test Reports") {
+
+        await loadTestReports();
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOAD TEST REPORTS
+===================================================== */
+
+async function loadTestReports() {
+
+    const reportList =
+        document.getElementById("test-reports-list");
+
+
+    if (!reportList) {
+
+        return;
+
+    }
+
+
+    reportList.innerHTML =
+        '<div class="empty-message">Loading test reports...</div>';
+
+
+    const {
+        data: entries,
+        error
+    } = await supabaseClient.storage
+        .from("MMU documents")
+        .list(
+            "Test Reports",
+            {
+                sortBy: {
+                    column: "name",
+                    order: "asc"
+                }
+            }
+        );
+
+
+    if (error) {
+
+        console.error(
+            "Test Reports loading error:",
+            error
+        );
+
+
+        reportList.innerHTML =
+            '<div class="empty-message">Unable to load test reports.</div>';
+
+        return;
+
+    }
+
+
+    reportList.innerHTML = "";
+
+    let foundFiles = false;
+
+
+    for (const entry of entries) {
+
+        const entryName =
+            entry.name;
+
+
+        if (!entryName) {
+
+            continue;
+
+        }
+
+
+        const {
+            data: files,
+            error: fileError
+        } = await supabaseClient.storage
+            .from("MMU documents")
+            .list(
+                "Test Reports/" + entryName,
+                {
+                    sortBy: {
+                        column: "name",
+                        order: "asc"
+                    }
+                }
+            );
+
+
+        if (fileError) {
+
+            console.error(
+                "Folder loading error:",
+                fileError
+            );
+
+            continue;
+
+        }
+
+
+        if (!files || files.length === 0) {
+
+            continue;
+
+        }
+
+
+        const yearHeading =
+            document.createElement("div");
+
+        yearHeading.className =
+            "report-year-heading";
+
+        yearHeading.textContent =
+            "📂 " + entryName;
+
+        reportList.appendChild(
+            yearHeading
+        );
+
+
+        for (const file of files) {
+
+            if (!file.name) {
+
+                continue;
+
+            }
+
+
+            foundFiles = true;
+
+
+            const filePath =
+                "Test Reports/" +
+                entryName +
+                "/" +
+                file.name;
+
+
+            const {
+                data: signedData,
+                error: signedError
+            } = await supabaseClient.storage
+                .from("MMU documents")
+                .createSignedUrl(
+                    filePath,
+                    3600
+                );
+
+
+            if (signedError) {
+
+                console.error(
+                    "Signed URL error:",
+                    signedError
+                );
+
+                continue;
+
+            }
+
+
+            /* DOCUMENT CARD */
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "document-card";
+
+
+            /* FILE NAME */
+
+            const fileName =
+                document.createElement("span");
+
+            fileName.textContent =
+                "📄 " + file.name;
+
+
+            card.appendChild(fileName);
+
+
+            /* VIEW BUTTON */
+
+            const viewLink =
+                document.createElement("a");
+
+            viewLink.href =
+                signedData.signedUrl;
+
+            viewLink.target =
+                "_blank";
+
+            viewLink.textContent =
+                "View";
+
+
+            card.appendChild(viewLink);
+
+
+            /* ADMIN DELETE BUTTON */
+
+            if (currentUserRole === "admin") {
+
+                const deleteButton =
+                    document.createElement("button");
+
+                deleteButton.className =
+                    "delete-document-button";
+
+                deleteButton.textContent =
+                    "🗑 Delete";
+
+
+                deleteButton.onclick =
+                    function () {
+
+                        deleteTestReport(
+                            filePath,
+                            card
+                        );
+
+                    };
+
+
+                card.appendChild(
+                    deleteButton
+                );
+
+            }
+
+
+            reportList.appendChild(
+                card
+            );
+
+        }
+
+    }
+
+
+    if (!foundFiles) {
+
+        reportList.innerHTML =
+            '<div class="empty-message">No test reports uploaded yet.</div>';
+
+    }
+
+}
+
+
+
+/* =====================================================
+   DELETE TEST REPORT
+===================================================== */
+
+async function deleteTestReport(
+    filePath,
+    card
+) {
+
+    if (currentUserRole !== "admin") {
+
+        alert(
+            "Only an administrator can delete documents."
+        );
+
+        return;
+
+    }
+
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete this document?"
+        );
+
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+
+    const {
+        error
+    } = await supabaseClient.storage
+        .from("MMU documents")
+        .remove([
+            filePath
+        ]);
+
+
+    if (error) {
+
+        console.error(
+            "Delete error:",
+            error
+        );
+
+
+        alert(
+            "Delete failed: " +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    card.remove();
+
+}
+
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function logoutUser() {
+
+    const {
+        error
+    } = await supabaseClient.auth.signOut();
+
+
+    if (error) {
+
+        console.error(error);
+
+        return;
+
+    }
+
+
+    currentUserRole = null;
+
+    hideUploadForm();
+
+}
+
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+async function initializePage() {
+
+    await checkLogin();
+
+    await loadTestReports();
+
+}
+
+
+initializePage();
+
+
+</script>
+
+
+</body>
+
+</html>

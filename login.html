@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MMU Staff Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
+</head>
+
+
+<body>
+
+    <section class="login-container">
+
+        <div class="library-logo">
+            <img src="images/dgpc-logo.png" alt="DGPC Logo">
+        </div>
+
+        <h2>MMU Staff Login</h2>
+
+        <p>Authorized personnel only</p>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email address"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button onclick="loginUser()">
+            Login
+        </button>
+
+        <p id="login-message"></p>
+
+    </section>
+
+
+    <script>
+
+        async function loginUser() {
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("login-message");
+
+            message.textContent = "";
+
+            if (!email || !password) {
+
+                message.textContent = "Please enter your email and password.";
+                return;
+
+            }
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+            if (error) {
+
+                message.textContent = "Login failed: " + error.message;
+                return;
+
+            }
+
+            message.textContent = "Login successful!";
+
+            window.location.href = "gallery-upload.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
