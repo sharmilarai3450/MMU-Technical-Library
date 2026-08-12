@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>Gallery - MMU</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>Gallery - MMU</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
 
 </head>
 
@@ -31,14 +37,14 @@
 
 <nav>
 
-<a href="index.html">Home</a>
-<a href="equipment.html">Equipment</a>
-<a href="maintenance.html">Maintenance</a>
-<a href="unit-structure.html">Unit Structure</a>
-<a href="staff-directory.html">Staff Directory</a>
-<a href="technical-library.html">Technical Library</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact Us</a>
+    <a href="index.html">Home</a>
+    <a href="equipment.html">Equipment</a>
+    <a href="maintenance.html">Maintenance</a>
+    <a href="unit-structure.html">Unit Structure</a>
+    <a href="staff-directory.html">Staff Directory</a>
+    <a href="technical-library.html">Technical Library</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact Us</a>
 
 </nav>
 
@@ -47,66 +53,519 @@
 <section class="gallery-section">
 
 
-<h2>MMU Gallery</h2>
+    <h2>MMU Gallery</h2>
 
 
-<p class="gallery-intro">
+    <p class="gallery-intro">
 
-Photographs of major maintenance activities, installations,
-team events and other activities of the Mechanical Maintenance Unit.
+        Photographs of major maintenance activities, installations,
+        team events and other activities of the Mechanical Maintenance Unit.
 
-</p>
+    </p>
 
-<div class="gallery-filter">
 
-<button onclick="filterGallery('All')">
-All
-</button>
+    <!-- STAFF ACCESS -->
 
-<button onclick="filterGallery('Annual Maintenance')">
-Annual Maintenance
-</button>
+    <div class="staff-access">
 
-<button onclick="filterGallery('Special Maintenance')">
-Special Maintenance
-</button>
+        <!-- LOGGED OUT -->
 
-<button onclick="filterGallery('New Installations & Modifications')">
-New Installations & Modifications
-</button>
+        <div id="logged-out-area">
 
-<button onclick="filterGallery('Major Breakdown & Restoration')">
-Major Breakdown & Restoration
-</button>
+            <a
+                href="login.html"
+                class="staff-login-button"
+            >
+                🔐 Staff Login
+            </a>
 
-<button onclick="filterGallery('Team Events')">
-Team Events
-</button>
+        </div>
 
-<button onclick="filterGallery('Social & External Events')">
-Social & External Events
-</button>
 
-</div>
+        <!-- LOGGED IN -->
 
-<div id="gallery-container">
+        <div
+            id="logged-in-area"
+            style="display:none;"
+        >
 
-</div>
-<div id="image-lightbox">
+            <span id="user-email"></span>
 
-    <span id="close-lightbox">&times;</span>
+            <button
+                onclick="showGalleryUpload()"
+                class="upload-button"
+            >
+                ➕ Upload Activity
+            </button>
 
-    <img id="lightbox-image">
+            <button
+                onclick="logoutUser()"
+                class="logout-button"
+            >
+                Logout
+            </button>
 
-</div>
+        </div>
 
+    </div>
+
+
+
+    <!-- GALLERY UPLOAD FORM -->
+
+    <div
+        id="gallery-upload-panel"
+        class="upload-panel"
+        style="display:none;"
+    >
+
+        <h3>Upload Gallery Activity</h3>
+
+
+        <label for="title">
+            Activity Title
+        </label>
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Example: MIV Seal Replacement"
+        >
+
+
+        <label for="category">
+            Category
+        </label>
+
+        <select id="category">
+
+            <option>
+                Annual Maintenance
+            </option>
+
+            <option>
+                Special Maintenance
+            </option>
+
+            <option>
+                New Installations & Modifications
+            </option>
+
+            <option>
+                Major Breakdown & Restoration
+            </option>
+
+            <option>
+                Team Events
+            </option>
+
+            <option>
+                Social & External Events
+            </option>
+
+        </select>
+
+
+        <label for="year">
+            Year (Optional)
+        </label>
+
+        <input
+            type="number"
+            id="year"
+            placeholder="Example: 2026"
+        >
+
+
+        <label for="description">
+            Description (Optional)
+        </label>
+
+        <textarea
+            id="description"
+            placeholder="Short description"
+        ></textarea>
+
+
+        <label for="photos">
+            Select Photos
+        </label>
+
+        <input
+            type="file"
+            id="photos"
+            multiple
+            accept="image/*"
+        >
+
+
+        <div class="upload-actions">
+
+            <button
+                onclick="uploadGallery()"
+                class="upload-confirm-button"
+            >
+                Upload
+            </button>
+
+            <button
+                onclick="hideGalleryUpload()"
+                class="cancel-button"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+
+        <p id="upload-message"></p>
+
+    </div>
+
+
+
+    <!-- GALLERY FILTER -->
+
+    <div class="gallery-filter">
+
+        <button onclick="filterGallery('All')">
+            All
+        </button>
+
+        <button onclick="filterGallery('Annual Maintenance')">
+            Annual Maintenance
+        </button>
+
+        <button onclick="filterGallery('Special Maintenance')">
+            Special Maintenance
+        </button>
+
+        <button onclick="filterGallery('New Installations & Modifications')">
+            New Installations & Modifications
+        </button>
+
+        <button onclick="filterGallery('Major Breakdown & Restoration')">
+            Major Breakdown & Restoration
+        </button>
+
+        <button onclick="filterGallery('Team Events')">
+            Team Events
+        </button>
+
+        <button onclick="filterGallery('Social & External Events')">
+            Social & External Events
+        </button>
+
+    </div>
+
+
+
+    <!-- GALLERY -->
+
+    <div id="gallery-container"></div>
+
+
+
+    <!-- LIGHTBOX -->
+
+    <div id="image-lightbox">
+
+        <span id="close-lightbox">
+            &times;
+        </span>
+
+        <img id="lightbox-image">
+
+    </div>
 
 
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="supabase-config.js"></script>
+
+<script>
+
+
+/* =====================================================
+   LOGIN STATUS
+===================================================== */
+
+async function checkGalleryLogin() {
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+
+    updateGalleryLoginDisplay(session);
+
+
+}
+
+
+
+/* =====================================================
+   UPDATE LOGIN DISPLAY
+===================================================== */
+
+function updateGalleryLoginDisplay(session) {
+
+    const loggedOutArea =
+        document.getElementById("logged-out-area");
+
+    const loggedInArea =
+        document.getElementById("logged-in-area");
+
+    const userEmail =
+        document.getElementById("user-email");
+
+
+    if (session) {
+
+        loggedOutArea.style.display = "none";
+
+        loggedInArea.style.display = "flex";
+
+        userEmail.textContent =
+            "👤 " + session.user.email;
+
+    }
+
+    else {
+
+        loggedOutArea.style.display = "block";
+
+        loggedInArea.style.display = "none";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOGIN / LOGOUT LISTENER
+===================================================== */
+
+supabaseClient.auth.onAuthStateChange(
+    (event, session) => {
+
+        updateGalleryLoginDisplay(session);
+
+    }
+);
+
+
+
+/* =====================================================
+   SHOW UPLOAD FORM
+===================================================== */
+
+function showGalleryUpload() {
+
+    document.getElementById(
+        "gallery-upload-panel"
+    ).style.display = "block";
+
+}
+
+
+
+/* =====================================================
+   HIDE UPLOAD FORM
+===================================================== */
+
+function hideGalleryUpload() {
+
+    document.getElementById(
+        "gallery-upload-panel"
+    ).style.display = "none";
+
+}
+
+
+
+/* =====================================================
+   UPLOAD GALLERY
+===================================================== */
+
+async function uploadGallery() {
+
+
+    const title =
+        document.getElementById("title").value.trim();
+
+
+    const category =
+        document.getElementById("category").value;
+
+
+    const year =
+        document.getElementById("year").value;
+
+
+    const description =
+        document.getElementById("description").value.trim();
+
+
+    const files =
+        document.getElementById("photos").files;
+
+
+    const message =
+        document.getElementById("upload-message");
+
+
+    if (!title || files.length === 0) {
+
+        message.textContent =
+            "Please enter title and select photos.";
+
+        return;
+
+    }
+
+
+    message.textContent =
+        "Uploading...";
+
+
+    let imagePaths = [];
+
+
+    for (let file of files) {
+
+
+        const fileName =
+            Date.now() +
+            "_" +
+            file.name;
+
+
+        const {
+            error
+        } = await supabaseClient
+            .storage
+            .from("gallery-images")
+            .upload(
+                fileName,
+                file
+            );
+
+
+        if (error) {
+
+            console.error(error);
+
+            message.textContent =
+                "Image upload failed.";
+
+            return;
+
+        }
+
+
+        imagePaths.push(fileName);
+
+    }
+
+
+    const {
+        error: dbError
+    } = await supabaseClient
+        .from("gallery_events")
+        .insert({
+
+            title: title,
+
+            category: category,
+
+            year: year || null,
+
+            description:
+                description || null,
+
+            photos: imagePaths
+
+        });
+
+
+    if (dbError) {
+
+        console.error(dbError);
+
+        message.textContent =
+            "Database entry failed.";
+
+        return;
+
+    }
+
+
+    message.textContent =
+        "Gallery activity uploaded successfully!";
+
+
+    /* CLEAR FORM */
+
+    document.getElementById("title").value = "";
+
+    document.getElementById("year").value = "";
+
+    document.getElementById("description").value = "";
+
+    document.getElementById("photos").value = "";
+
+
+    /*
+       Reload the gallery so the new activity
+       appears immediately.
+    */
+
+    await loadGallery();
+
+}
+
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function logoutUser() {
+
+    const {
+        error
+    } = await supabaseClient.auth.signOut();
+
+
+    if (error) {
+
+        console.error(error);
+
+        return;
+
+    }
+
+
+    hideGalleryUpload();
+
+}
+
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+checkGalleryLogin();
+
+
+</script>
+
+
+
+<!-- EXISTING GALLERY CODE -->
 
 <script src="gallery.js"></script>
 
@@ -114,3 +573,5 @@ Social & External Events
 </body>
 
 </html>
+
+
